@@ -57,7 +57,6 @@ func (c *Cache) Set(key string, value interface{}, ttl time.Duration) {
 				for _, key := range expiredKeys {
 					c.m.Delete(key)
 				}
-				return
 			})
 		} else {
 			c.timer.Reset(ttl)
